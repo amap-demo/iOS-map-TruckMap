@@ -11,5 +11,6 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
+#import "MATrackPointAnnotation.h"
 
 #endif /* Swift_Bridging_Header_h */

@@ -10,16 +10,24 @@
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
+#import "MATrackPointAnnotation.h"
 
 #define kLocationName @"您的位置"
 #define kPointGas @"gas"
+#define kPointService @"service"
 #define kPointViolation @"违章点"
+
 
 @interface ViewController ()<MAMapViewDelegate, AMapSearchDelegate>
 @property (nonatomic, strong) MAMapView *mapView;
 @property (nonatomic, strong) AMapSearchAPI *search;
-@property (nonatomic, strong) NSMutableArray *pAnnotations;
+@property (nonatomic, strong) NSMutableArray *gasAnnotations;
+@property (nonatomic, strong) NSMutableArray *serviceAnnotations;
+@property (nonatomic, strong) NSMutableArray *violationAnnotations;
+
 @property (nonatomic, strong) NSArray *limits;
+
+@property (nonatomic, assign) BOOL isLocated;
 
 @end
 @implementation ViewController
@@ -28,8 +36,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _pAnnotations = [NSMutableArray new];
-    
+    _gasAnnotations = [NSMutableArray new];
+    _serviceAnnotations = [NSMutableArray new];
+    _violationAnnotations = [NSMutableArray new];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back"
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
@@ -58,8 +67,6 @@
     [self.view addSubview:switchsPannelView];
     
     [self initTrucklimitAreaOverlay];
-    [self searchGasPOI];
-    [self getViolationPOI];
 }
 
 - (void)initTrucklimitAreaOverlay{
@@ -138,11 +145,20 @@
 - (void)searchGasPOI
 {
     AMapPOIAroundSearchRequest *request = [[AMapPOIAroundSearchRequest alloc] init];
-    request.city = @"北京";
     request.keywords = @"加油站";
-    request.location = [AMapGeoPoint locationWithLatitude:39.909071 longitude:116.39756];
+    request.location = [AMapGeoPoint locationWithLatitude:self.mapView.userLocation.coordinate.latitude longitude:self.mapView.userLocation.coordinate.longitude];
     request.radius = 60*1000;
     request.types = @"010100";
+    request.offset = 100;
+    [self.search AMapPOIAroundSearch:request];//POI 周边查询接口
+}
+
+- (void)searchServicePOI
+{
+    AMapPOIAroundSearchRequest *request = [[AMapPOIAroundSearchRequest alloc] init];
+    request.location = [AMapGeoPoint locationWithLatitude:self.mapView.userLocation.coordinate.latitude longitude:self.mapView.userLocation.coordinate.longitude];
+    request.radius = 60*1000;
+    request.types = @"030000";
     request.offset = 100;
     [self.search AMapPOIAroundSearch:request];//POI 周边查询接口
 }
@@ -152,22 +168,21 @@
     NSString *locationString = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil];
     NSArray *locations = [locationString componentsSeparatedByString:@"\n"];
     
-    NSMutableArray *items = [NSMutableArray array];
-    
     for (int i = 0; i < locations.count; ++i)
     {
         @autoreleasepool {
             NSArray *coordinate = [locations[i] componentsSeparatedByString:@","];
             if (coordinate.count == 2)
             {
-                MAPointAnnotation *annotation = [[MAPointAnnotation alloc] init];
+                MATrackPointAnnotation *annotation = [[MATrackPointAnnotation alloc] init];
                 annotation.coordinate = CLLocationCoordinate2DMake([coordinate[1] floatValue], [coordinate[0] floatValue]);
-                annotation.subtitle   = kPointViolation;
-                [items addObject:annotation];
+                annotation.title   = kPointViolation;
+                annotation.type = 2;
+                [_violationAnnotations addObject:annotation];
             }
         }
     }
-    [self.mapView addAnnotations:items];
+    [self.mapView addAnnotations:_violationAnnotations];
 }
 
 - (UIView *)makeSwitchsPannelView
@@ -176,20 +191,59 @@
     ret.backgroundColor = [UIColor whiteColor];
     
     UISwitch *swt1 = [[UISwitch alloc] init];
+    UISwitch *swt2 = [[UISwitch alloc] init];
+    UISwitch *swt3 = [[UISwitch alloc] init];
+    UISwitch *swt4 = [[UISwitch alloc] init];
     UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 70, CGRectGetHeight(swt1.bounds))];
     label1.text = @"路况";
+    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(label1.frame) + 5, 70, CGRectGetHeight(swt1.bounds))];
+    label2.text = @"违章:";
+    UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(label2.frame) + 5, 70, CGRectGetHeight(swt1.bounds))];
+    label3.text = @"加气站:";
+    UILabel *label4 = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(label3.frame) + 5, 70, CGRectGetHeight(swt1.bounds))];
+    label4.text = @"维修站:";
     
     [ret addSubview:label1];
     [ret addSubview:swt1];
+    [ret addSubview:label2];
+    [ret addSubview:swt2];
+    [ret addSubview:label3];
+    [ret addSubview:swt3];
+    [ret addSubview:label4];
+    [ret addSubview:swt4];
     
+    // layout
     CGRect tempFrame = swt1.frame;
     tempFrame.origin.x = CGRectGetMaxX(label1.frame) + 5;
     swt1.frame = tempFrame;
+    
+    tempFrame = swt2.frame;
+    tempFrame.origin.x = CGRectGetMaxX(label2.frame) + 5;
+    tempFrame.origin.y = CGRectGetMinY(label2.frame);
+    swt2.frame = tempFrame;
+    
+    tempFrame = swt3.frame;
+    tempFrame.origin.x = CGRectGetMaxX(label3.frame) + 5;
+    tempFrame.origin.y = CGRectGetMinY(label3.frame);
+    swt3.frame = tempFrame;
+    
+    tempFrame = swt4.frame;
+    tempFrame.origin.x = CGRectGetMaxX(label4.frame) + 5;
+    tempFrame.origin.y = CGRectGetMinY(label4.frame);
+    swt4.frame = tempFrame;
+    
     [swt1 addTarget:self action:@selector(enableDrag:) forControlEvents:UIControlEventValueChanged];
+    [swt2 addTarget:self action:@selector(enableViolation:) forControlEvents:UIControlEventValueChanged];
+    [swt3 addTarget:self action:@selector(enableGas:) forControlEvents:UIControlEventValueChanged];
+    [swt4 addTarget:self action:@selector(enableService:) forControlEvents:UIControlEventValueChanged];
+
+    [swt1 setOn:self.mapView.showTraffic];
+    [swt2 setOn:YES];
+    [swt3 setOn:YES];
+    [swt4 setOn:YES];
+
     
-    [swt1 setOn:self.mapView.isScrollEnabled];
-    
-    ret.bounds = CGRectMake(0, 0, CGRectGetMaxX(swt1.frame), CGRectGetMaxY(label1.frame));
+    ret.bounds = CGRectMake(0, 0, CGRectGetMaxX(swt4.frame), CGRectGetMaxY(label4.frame));
     return ret;
 }
 
@@ -198,6 +252,32 @@
     self.mapView.showTraffic = sender.isOn;
 }
 
+- (void)enableViolation:(UISwitch *)sender
+{
+    if (sender.on) {
+        [self.mapView addAnnotations:_violationAnnotations];
+    }else{
+        [self.mapView removeAnnotations:_violationAnnotations];
+    }
+}
+
+- (void)enableGas:(UISwitch *)sender
+{
+    if (sender.on) {
+        [self.mapView addAnnotations:_gasAnnotations];
+    }else{
+        [self.mapView removeAnnotations:_gasAnnotations];
+    }
+}
+
+- (void)enableService:(UISwitch *)sender
+{
+    if (sender.on) {
+        [self.mapView addAnnotations:_serviceAnnotations];
+    }else{
+        [self.mapView removeAnnotations:_serviceAnnotations];
+    }
+}
 
 #pragma mark - action handle
 - (void)returnAction
@@ -205,23 +285,41 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)presentAnnomation:(NSArray *)pois{
-    if (_pAnnotations.count) {
-        [self.mapView removeAnnotations:_pAnnotations];
-        [_pAnnotations removeAllObjects];
+- (void)presentGasAnnomation:(NSArray *)pois{
+    if (_gasAnnotations.count) {
+        [self.mapView removeAnnotations:_gasAnnotations];
+        [_gasAnnotations removeAllObjects];
     }
-    for (AMapRoutePOI *poi in pois) {
-        MAPointAnnotation *annotation = [[MAPointAnnotation alloc] init];
+    for (AMapPOI *poi in pois) {
+        MATrackPointAnnotation *annotation = [[MATrackPointAnnotation alloc] init];
         annotation.coordinate = CLLocationCoordinate2DMake(poi.location.latitude, poi.location.longitude);
         annotation.title      = poi.name;
-        annotation.subtitle   = kPointGas;
+        annotation.subtitle   = poi.address;
+        annotation.type = 0;
         [self.mapView addAnnotation:annotation];
-        [_pAnnotations addObject:annotation];
+        [_gasAnnotations addObject:annotation];
+    }
+}
+
+- (void)presentServiceAnnomation:(NSArray *)pois{
+    if (_serviceAnnotations.count) {
+        [self.mapView removeAnnotations:_serviceAnnotations];
+        [_serviceAnnotations removeAllObjects];
+    }
+    for (AMapPOI *poi in pois) {
+        MATrackPointAnnotation *annotation = [[MATrackPointAnnotation alloc] init];
+        annotation.coordinate = CLLocationCoordinate2DMake(poi.location.latitude, poi.location.longitude);
+        annotation.title      = poi.name;
+        annotation.subtitle   = poi.address;
+        annotation.type = 1;
+        [self.mapView addAnnotation:annotation];
+        [_serviceAnnotations addObject:annotation];
     }
 }
 
 
 #pragma mark - MAMapViewDelegate
+
 - (MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id<MAOverlay>)overlay
 {
     if ([overlay isKindOfClass:[MAPolyline class]])
@@ -245,8 +343,9 @@
 
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
 {
-    if ([annotation isKindOfClass:[MAPointAnnotation class]])
+    if ([annotation isKindOfClass:[MATrackPointAnnotation class]])
     {
+        MATrackPointAnnotation *kannotation = (MATrackPointAnnotation *)annotation;
         static NSString *routePlanningCellIdentifier = @"RoutePlanningCellIdentifier";
         
         MAAnnotationView *poiAnnotationView = (MAAnnotationView*)[self.mapView dequeueReusableAnnotationViewWithIdentifier:routePlanningCellIdentifier];
@@ -261,9 +360,11 @@
         
         if([[annotation title] isEqualToString:kLocationName]){
             return nil;
-        }else if ([[annotation subtitle] isEqualToString:kPointGas]){
+        }else if (kannotation.type == 0){
             poiAnnotationView.image = [UIImage imageNamed:@"gaspoint"];
-        }else if ([[annotation subtitle] isEqualToString:kPointViolation]){
+        }else if (kannotation.type == 1){
+            poiAnnotationView.image = [UIImage imageNamed:@"servicepoint"];
+        }else if (kannotation.type == 2){
             poiAnnotationView.image = [UIImage imageNamed:@"Violation"];
         }
         return poiAnnotationView;
@@ -281,7 +382,11 @@
 - (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response
 {
     if (response.pois.count) {
-        [self presentAnnomation:response.pois];
+        if ([request.types isEqualToString:@"010100"]) {
+            [self presentGasAnnomation:response.pois];
+        }else if ([request.types isEqualToString:@"030000"]){
+            [self presentServiceAnnomation:response.pois];
+        }
     }
 }
 
@@ -298,9 +403,22 @@
 
 - (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
 {
-    if (updatingLocation)
+    if(!updatingLocation)
+    return ;
+    
+    if (userLocation.location.horizontalAccuracy < 0)
     {
-        NSLog(@"userlocation :%@", userLocation.location);
+        return ;
+    }
+    // only the first locate used.
+    if (!self.isLocated)
+    {
+        self.isLocated = YES;
+        self.mapView.userTrackingMode = MAUserTrackingModeFollow;
+        [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude)];
+        [self searchGasPOI];
+        [self searchServicePOI];
+        [self getViolationPOI];
     }
 }
 

@@ -12,7 +12,7 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
     let kLocationName: String = "您的位置"
     let kPointGas: String = "加油站"
     let kPointViolation: String = "违章点"
-    
+    var isLocated: Bool = false
     var limits:Array<Any> = []
     var search: AMapSearchAPI!
     var mapView: MAMapView!
@@ -22,7 +22,8 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
     var previousItem: UIBarButtonItem!
     var nextItem: UIBarButtonItem!
     var pAnnotations: Array<Any>?
-    
+    var serviceAnnotations: Array<Any>?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +32,7 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
         startCoordinate        = CLLocationCoordinate2DMake(39.910267, 116.370888)
         destinationCoordinate  = CLLocationCoordinate2DMake(40.589872, 117.081956)
         pAnnotations = Array.init()
+        serviceAnnotations = Array.init()
         initMapView()
         initSearch()
         let sws = makeSwitchsPannelView()
@@ -39,8 +41,6 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
         sws.autoresizingMask = [UIView.AutoresizingMask.flexibleTopMargin, UIView.AutoresizingMask.flexibleRightMargin]
         self.view.addSubview(sws)
         initTrucklimitAreaOverlay()
-        searchGasPOI()
-        getViolationPOI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,17 +95,33 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
         search.aMapTruckRouteSearch(request)
     }
     
-    func presentAnnomation(pois: Array<AMapPOI>) -> Void {
+    func poiPresentAnnomation(pois: Array<AMapPOI>) -> Void {
         if(pAnnotations!.count > 0){
             mapView.removeAnnotations(pAnnotations)
         }
         for poi: AMapPOI in pois {
-            let annotation = MAPointAnnotation.init()
+            let annotation = MATrackPointAnnotation.init()
             annotation.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(poi.location!.latitude), CLLocationDegrees(poi.location!.longitude))
+            annotation.type = 0
             annotation.title = poi.name
-            annotation.subtitle = kPointGas
+            annotation.subtitle = poi.address
             mapView.addAnnotation(annotation)
             pAnnotations?.append(annotation)
+        }
+    }
+    
+    func servicePresentAnnomation(pois: Array<AMapPOI>) -> Void {
+        if(serviceAnnotations!.count > 0){
+            mapView.removeAnnotations(serviceAnnotations)
+        }
+        for poi: AMapPOI in pois {
+            let annotation = MATrackPointAnnotation.init()
+            annotation.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(poi.location!.latitude), CLLocationDegrees(poi.location!.longitude))
+            annotation.type = 1
+            annotation.title = poi.name
+            annotation.subtitle = poi.address
+            mapView.addAnnotation(annotation)
+            serviceAnnotations?.append(annotation)
         }
     }
     
@@ -167,11 +183,21 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
     
     func searchGasPOI() {
         let request = AMapPOIAroundSearchRequest.init()
-        request.city = "北京"
         request.keywords = "加油站"
-        request.location = AMapGeoPoint.location(withLatitude: 39.909071, longitude: 116.39756)
+        let coor: CLLocationCoordinate2D = mapView.userLocation.coordinate
+        request.location = AMapGeoPoint.location(withLatitude: CGFloat(coor.latitude), longitude: CGFloat(coor.longitude))
         request.radius = 60*1000;
         request.types = "010100";
+        request.offset = 100;
+        self.search.aMapPOIAroundSearch(request)
+    }
+    
+    func searchServicePOI() -> Void {
+        let request = AMapPOIAroundSearchRequest.init()
+        let coor: CLLocationCoordinate2D = mapView.userLocation.coordinate
+        request.location = AMapGeoPoint.location(withLatitude: CGFloat(coor.latitude), longitude: CGFloat(coor.longitude))
+        request.radius = 60*1000;
+        request.types = "030000";
         request.offset = 100;
         self.search.aMapPOIAroundSearch(request)
     }
@@ -186,7 +212,8 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
         for oneLocation in locations {
             let coordinate = oneLocation.components(separatedBy: ",")
             if coordinate.count == 2{
-                let annotation = MAPointAnnotation.init()
+                let annotation = MATrackPointAnnotation.init()
+                annotation.type = 2
                 let lat = coordinate.last! as NSString
                 let lon = coordinate.first! as NSString
                 annotation.coordinate = CLLocationCoordinate2D.init(latitude: lat.doubleValue, longitude: lon.doubleValue)
@@ -218,7 +245,9 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
     
     func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
         
-        if annotation.isKind(of: MAPointAnnotation.self) {
+        if annotation.isKind(of: MATrackPointAnnotation.self) {
+            let kannotation:MATrackPointAnnotation = annotation as! MATrackPointAnnotation
+            
             let pointReuseIndetifier = "pointReuseIndetifier"
             var annotationView: MAAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: pointReuseIndetifier)
             
@@ -232,9 +261,11 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
             
             if annotation.title == kLocationName{
                 return nil;
-            }else if (annotation.subtitle  == kPointGas){
+            }else if (kannotation.type == 0){
                 annotationView!.image = UIImage(named: "gaspoint")
-            }else if (annotation.subtitle  == kPointViolation){
+            }else if (kannotation.type == 1){
+                annotationView!.image = UIImage(named: "servicepoint")
+            }else if (kannotation.type == 2){
                 annotationView!.image = UIImage(named: "Violation")
             }
             
@@ -257,8 +288,31 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
     /*poi查询回调函数*/
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
         if (response.pois.count > 0){
-            presentAnnomation(pois: response.pois)
+            if (request.types == "010100"){
+                poiPresentAnnomation(pois: response.pois)
+            }else if (request.types == "030000"){
+                servicePresentAnnomation(pois: response.pois)
+            }
         }
+    }
+    
+    func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
+        if !updatingLocation {
+            return
+        }
+        if userLocation.location.horizontalAccuracy < 0 {
+            return
+        }
+        // only the first locate used.
+        if !self.isLocated {
+            self.isLocated = true
+            self.mapView.userTrackingMode = .follow
+            self.mapView.centerCoordinate = userLocation.location.coordinate
+            searchGasPOI()
+            getViolationPOI()
+            searchServicePOI()
+        }
+        
     }
 }
 

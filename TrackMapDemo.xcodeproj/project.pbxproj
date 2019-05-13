@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26355D542289408F00B174D1 /* MATrackPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26355D532289408F00B174D1 /* MATrackPointAnnotation.m */; };
+		26355D552289408F00B174D1 /* MATrackPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26355D532289408F00B174D1 /* MATrackPointAnnotation.m */; };
+		26355D64228959C700B174D1 /* servicepoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355D62228959C600B174D1 /* servicepoint@2x.png */; };
+		26355D65228959C700B174D1 /* servicepoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355D62228959C600B174D1 /* servicepoint@2x.png */; };
+		26355D66228959C700B174D1 /* servicepoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355D63228959C700B174D1 /* servicepoint.png */; };
+		26355D67228959C700B174D1 /* servicepoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355D63228959C700B174D1 /* servicepoint.png */; };
 		263ACE4422851F9F00586B88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 263ACE4322851F9F00586B88 /* AppDelegate.m */; };
 		263ACE4722851F9F00586B88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263ACE4622851F9F00586B88 /* ViewController.m */; };
 		263ACE4A22851F9F00586B88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263ACE4822851F9F00586B88 /* Main.storyboard */; };
@@ -837,6 +843,10 @@
 
 /* Begin PBXFileReference section */
 		1D6A2D6C57901A3AF024FE52 /* libPods-TrackMapDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrackMapDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26355D522289408F00B174D1 /* MATrackPointAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATrackPointAnnotation.h; sourceTree = "<group>"; };
+		26355D532289408F00B174D1 /* MATrackPointAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MATrackPointAnnotation.m; sourceTree = "<group>"; };
+		26355D62228959C600B174D1 /* servicepoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "servicepoint@2x.png"; sourceTree = "<group>"; };
+		26355D63228959C700B174D1 /* servicepoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = servicepoint.png; sourceTree = "<group>"; };
 		263ACE3F22851F9F00586B88 /* TrackMapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		263ACE4222851F9F00586B88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		263ACE4322851F9F00586B88 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1323,6 +1333,8 @@
 				263ACE4322851F9F00586B88 /* AppDelegate.m */,
 				263ACE4522851F9F00586B88 /* ViewController.h */,
 				263ACE4622851F9F00586B88 /* ViewController.m */,
+				26355D522289408F00B174D1 /* MATrackPointAnnotation.h */,
+				26355D532289408F00B174D1 /* MATrackPointAnnotation.m */,
 				263ACE4822851F9F00586B88 /* Main.storyboard */,
 				263ACE4B22851FA000586B88 /* Assets.xcassets */,
 				263ACE4D22851FA000586B88 /* LaunchScreen.storyboard */,
@@ -1397,6 +1409,8 @@
 				2663932C22852C4300D1AE21 /* truck@2x.png */,
 				2663932D22852C4300D1AE21 /* hema.png */,
 				2663932E22852C4300D1AE21 /* gpsStat2@2x.png */,
+				26355D63228959C700B174D1 /* servicepoint.png */,
+				26355D62228959C600B174D1 /* servicepoint@2x.png */,
 				2663932F22852C4300D1AE21 /* Violation@2x.png */,
 				2663933022852C4300D1AE21 /* localtiles */,
 				2663948422852C4300D1AE21 /* weather_daxue@2x.png */,
@@ -1916,6 +1930,11 @@
 				TargetAttributes = {
 					263ACE3E22851F9F00586B88 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					263ACE6122851FA100586B88 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -1923,6 +1942,11 @@
 					};
 					263ACE77228524AB00586B88 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -2163,6 +2187,7 @@
 				266396F922852C4400D1AE21 /* 13_6747_3097.png in Resources */,
 				266395EB22852C4400D1AE21 /* 13_6737_3099.png in Resources */,
 				266396D922852C4400D1AE21 /* 13_6750_3092.png in Resources */,
+				26355D64228959C700B174D1 /* servicepoint@2x.png in Resources */,
 				2663950322852C4400D1AE21 /* 11_1684_775.png in Resources */,
 				266397B522852C4400D1AE21 /* decrease@2x.png in Resources */,
 				2663976722852C4400D1AE21 /* 13_6744_3099.png in Resources */,
@@ -2218,6 +2243,7 @@
 				2663958122852C4400D1AE21 /* 12_3375_1553.png in Resources */,
 				266394CF22852C4400D1AE21 /* download@3x.png in Resources */,
 				266395A722852C4400D1AE21 /* 13_6741_3103.png in Resources */,
+				26355D66228959C700B174D1 /* servicepoint.png in Resources */,
 				266395E322852C4400D1AE21 /* 13_6740_3107.png in Resources */,
 				266394BB22852C4400D1AE21 /* animatedTrain_4.png in Resources */,
 				2663954B22852C4400D1AE21 /* 12_3373_1546.png in Resources */,
@@ -2581,6 +2607,7 @@
 				266396FA22852C4400D1AE21 /* 13_6747_3097.png in Resources */,
 				266395EC22852C4400D1AE21 /* 13_6737_3099.png in Resources */,
 				266396DA22852C4400D1AE21 /* 13_6750_3092.png in Resources */,
+				26355D65228959C700B174D1 /* servicepoint@2x.png in Resources */,
 				2663950422852C4400D1AE21 /* 11_1684_775.png in Resources */,
 				266397B622852C4400D1AE21 /* decrease@2x.png in Resources */,
 				2663976822852C4400D1AE21 /* 13_6744_3099.png in Resources */,
@@ -2636,6 +2663,7 @@
 				2663958222852C4400D1AE21 /* 12_3375_1553.png in Resources */,
 				266394D022852C4400D1AE21 /* download@3x.png in Resources */,
 				266395A822852C4400D1AE21 /* 13_6741_3103.png in Resources */,
+				26355D67228959C700B174D1 /* servicepoint.png in Resources */,
 				266395E422852C4400D1AE21 /* 13_6740_3107.png in Resources */,
 				266394BC22852C4400D1AE21 /* animatedTrain_4.png in Resources */,
 				2663954C22852C4400D1AE21 /* 12_3373_1546.png in Resources */,
@@ -2833,6 +2861,7 @@
 				263ACE4722851F9F00586B88 /* ViewController.m in Sources */,
 				263ACE5222851FA000586B88 /* main.m in Sources */,
 				263ACE4422851F9F00586B88 /* AppDelegate.m in Sources */,
+				26355D542289408F00B174D1 /* MATrackPointAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2849,6 +2878,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				263ACE7D228524AB00586B88 /* ViewController.swift in Sources */,
+				26355D552289408F00B174D1 /* MATrackPointAnnotation.m in Sources */,
 				263ACE7B228524AB00586B88 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,10 +9,20 @@
 /* Begin PBXBuildFile section */
 		26355D542289408F00B174D1 /* MATrackPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26355D532289408F00B174D1 /* MATrackPointAnnotation.m */; };
 		26355D552289408F00B174D1 /* MATrackPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26355D532289408F00B174D1 /* MATrackPointAnnotation.m */; };
-		26355D64228959C700B174D1 /* servicepoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355D62228959C600B174D1 /* servicepoint@2x.png */; };
-		26355D65228959C700B174D1 /* servicepoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355D62228959C600B174D1 /* servicepoint@2x.png */; };
-		26355D66228959C700B174D1 /* servicepoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355D63228959C700B174D1 /* servicepoint.png */; };
-		26355D67228959C700B174D1 /* servicepoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355D63228959C700B174D1 /* servicepoint.png */; };
+		26355DBB2289A14A00B174D1 /* gaspoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DB42289A14800B174D1 /* gaspoint@2x.png */; };
+		26355DBC2289A14A00B174D1 /* gaspoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DB42289A14800B174D1 /* gaspoint@2x.png */; };
+		26355DBD2289A14A00B174D1 /* gaspoint_shihua@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DB52289A14800B174D1 /* gaspoint_shihua@2x.png */; };
+		26355DBE2289A14A00B174D1 /* gaspoint_shihua@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DB52289A14800B174D1 /* gaspoint_shihua@2x.png */; };
+		26355DBF2289A14A00B174D1 /* servicepoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DB62289A14900B174D1 /* servicepoint@2x.png */; };
+		26355DC02289A14A00B174D1 /* servicepoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DB62289A14900B174D1 /* servicepoint@2x.png */; };
+		26355DC12289A14A00B174D1 /* gaspoint_shiyou@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DB72289A14900B174D1 /* gaspoint_shiyou@2x.png */; };
+		26355DC22289A14A00B174D1 /* gaspoint_shiyou@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DB72289A14900B174D1 /* gaspoint_shiyou@2x.png */; };
+		26355DC32289A14A00B174D1 /* gaspoint_kepai@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DB82289A14900B174D1 /* gaspoint_kepai@2x.png */; };
+		26355DC42289A14A00B174D1 /* gaspoint_kepai@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DB82289A14900B174D1 /* gaspoint_kepai@2x.png */; };
+		26355DC52289A14A00B174D1 /* cesupoint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DB92289A14900B174D1 /* cesupoint@3x.png */; };
+		26355DC62289A14A00B174D1 /* cesupoint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DB92289A14900B174D1 /* cesupoint@3x.png */; };
+		26355DC72289A14A00B174D1 /* Violation@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DBA2289A14A00B174D1 /* Violation@3x.png */; };
+		26355DC82289A14A00B174D1 /* Violation@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26355DBA2289A14A00B174D1 /* Violation@3x.png */; };
 		263ACE4422851F9F00586B88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 263ACE4322851F9F00586B88 /* AppDelegate.m */; };
 		263ACE4722851F9F00586B88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263ACE4622851F9F00586B88 /* ViewController.m */; };
 		263ACE4A22851F9F00586B88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263ACE4822851F9F00586B88 /* Main.storyboard */; };
@@ -37,8 +47,6 @@
 		266394A822852C4400D1AE21 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663930B22852C4300D1AE21 /* arrow_right.png */; };
 		266394A922852C4400D1AE21 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663930C22852C4300D1AE21 /* search@2x.png */; };
 		266394AA22852C4400D1AE21 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663930C22852C4300D1AE21 /* search@2x.png */; };
-		266394AB22852C4400D1AE21 /* gaspoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663930D22852C4300D1AE21 /* gaspoint@2x.png */; };
-		266394AC22852C4400D1AE21 /* gaspoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663930D22852C4300D1AE21 /* gaspoint@2x.png */; };
 		266394AD22852C4400D1AE21 /* railway_station@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663930E22852C4300D1AE21 /* railway_station@2x.png */; };
 		266394AE22852C4400D1AE21 /* railway_station@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663930E22852C4300D1AE21 /* railway_station@2x.png */; };
 		266394AF22852C4400D1AE21 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663930F22852C4300D1AE21 /* refresh@2x.png */; };
@@ -99,8 +107,6 @@
 		266394E622852C4400D1AE21 /* hema.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663932D22852C4300D1AE21 /* hema.png */; };
 		266394E722852C4400D1AE21 /* gpsStat2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663932E22852C4300D1AE21 /* gpsStat2@2x.png */; };
 		266394E822852C4400D1AE21 /* gpsStat2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663932E22852C4300D1AE21 /* gpsStat2@2x.png */; };
-		266394E922852C4400D1AE21 /* Violation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663932F22852C4300D1AE21 /* Violation@2x.png */; };
-		266394EA22852C4400D1AE21 /* Violation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663932F22852C4300D1AE21 /* Violation@2x.png */; };
 		266394EB22852C4400D1AE21 /* 11_1686_775.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663933222852C4300D1AE21 /* 11_1686_775.png */; };
 		266394EC22852C4400D1AE21 /* 11_1686_775.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663933222852C4300D1AE21 /* 11_1686_775.png */; };
 		266394ED22852C4400D1AE21 /* 11_1686_774.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663933322852C4300D1AE21 /* 11_1686_774.png */; };
@@ -777,8 +783,6 @@
 		2663978C22852C4400D1AE21 /* weather_daxue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663948422852C4300D1AE21 /* weather_daxue@2x.png */; };
 		2663978D22852C4400D1AE21 /* userPosition.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663948522852C4300D1AE21 /* userPosition.png */; };
 		2663978E22852C4400D1AE21 /* userPosition.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663948522852C4300D1AE21 /* userPosition.png */; };
-		2663978F22852C4400D1AE21 /* Violation.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663948622852C4300D1AE21 /* Violation.png */; };
-		2663979022852C4400D1AE21 /* Violation.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663948622852C4300D1AE21 /* Violation.png */; };
 		2663979122852C4400D1AE21 /* userPosition@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663948722852C4400D1AE21 /* userPosition@2x.png */; };
 		2663979222852C4400D1AE21 /* userPosition@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663948722852C4400D1AE21 /* userPosition@2x.png */; };
 		2663979322852C4400D1AE21 /* transforstop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663948822852C4400D1AE21 /* transforstop.png */; };
@@ -817,8 +821,6 @@
 		266397B422852C4400D1AE21 /* endPoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663949822852C4400D1AE21 /* endPoint@2x.png */; };
 		266397B522852C4400D1AE21 /* decrease@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663949922852C4400D1AE21 /* decrease@2x.png */; };
 		266397B622852C4400D1AE21 /* decrease@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663949922852C4400D1AE21 /* decrease@2x.png */; };
-		266397B722852C4400D1AE21 /* gaspoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663949A22852C4400D1AE21 /* gaspoint.png */; };
-		266397B822852C4400D1AE21 /* gaspoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663949A22852C4400D1AE21 /* gaspoint.png */; };
 		266397B922852C4400D1AE21 /* custtexture_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663949B22852C4400D1AE21 /* custtexture_green.png */; };
 		266397BA22852C4400D1AE21 /* custtexture_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663949B22852C4400D1AE21 /* custtexture_green.png */; };
 		266397BB22852C4400D1AE21 /* naviBackgroundNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2663949C22852C4400D1AE21 /* naviBackgroundNormal.png */; };
@@ -845,8 +847,13 @@
 		1D6A2D6C57901A3AF024FE52 /* libPods-TrackMapDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrackMapDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26355D522289408F00B174D1 /* MATrackPointAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATrackPointAnnotation.h; sourceTree = "<group>"; };
 		26355D532289408F00B174D1 /* MATrackPointAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MATrackPointAnnotation.m; sourceTree = "<group>"; };
-		26355D62228959C600B174D1 /* servicepoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "servicepoint@2x.png"; sourceTree = "<group>"; };
-		26355D63228959C700B174D1 /* servicepoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = servicepoint.png; sourceTree = "<group>"; };
+		26355DB42289A14800B174D1 /* gaspoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gaspoint@2x.png"; sourceTree = "<group>"; };
+		26355DB52289A14800B174D1 /* gaspoint_shihua@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gaspoint_shihua@2x.png"; sourceTree = "<group>"; };
+		26355DB62289A14900B174D1 /* servicepoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "servicepoint@2x.png"; sourceTree = "<group>"; };
+		26355DB72289A14900B174D1 /* gaspoint_shiyou@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gaspoint_shiyou@2x.png"; sourceTree = "<group>"; };
+		26355DB82289A14900B174D1 /* gaspoint_kepai@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gaspoint_kepai@2x.png"; sourceTree = "<group>"; };
+		26355DB92289A14900B174D1 /* cesupoint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cesupoint@3x.png"; sourceTree = "<group>"; };
+		26355DBA2289A14A00B174D1 /* Violation@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Violation@3x.png"; sourceTree = "<group>"; };
 		263ACE3F22851F9F00586B88 /* TrackMapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		263ACE4222851F9F00586B88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		263ACE4322851F9F00586B88 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -874,7 +881,6 @@
 		2663930A22852C4300D1AE21 /* circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle@2x.png"; sourceTree = "<group>"; };
 		2663930B22852C4300D1AE21 /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
 		2663930C22852C4300D1AE21 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
-		2663930D22852C4300D1AE21 /* gaspoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gaspoint@2x.png"; sourceTree = "<group>"; };
 		2663930E22852C4300D1AE21 /* railway_station@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "railway_station@2x.png"; sourceTree = "<group>"; };
 		2663930F22852C4300D1AE21 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 		2663931022852C4300D1AE21 /* custtexture_bad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = custtexture_bad.png; sourceTree = "<group>"; };
@@ -905,7 +911,6 @@
 		2663932C22852C4300D1AE21 /* truck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "truck@2x.png"; sourceTree = "<group>"; };
 		2663932D22852C4300D1AE21 /* hema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hema.png; sourceTree = "<group>"; };
 		2663932E22852C4300D1AE21 /* gpsStat2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gpsStat2@2x.png"; sourceTree = "<group>"; };
-		2663932F22852C4300D1AE21 /* Violation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Violation@2x.png"; sourceTree = "<group>"; };
 		2663933222852C4300D1AE21 /* 11_1686_775.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11_1686_775.png; sourceTree = "<group>"; };
 		2663933322852C4300D1AE21 /* 11_1686_774.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11_1686_774.png; sourceTree = "<group>"; };
 		2663933422852C4300D1AE21 /* 11_1686_776.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11_1686_776.png; sourceTree = "<group>"; };
@@ -1244,7 +1249,6 @@
 		2663948322852C4300D1AE21 /* 13_6739_3098.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_6739_3098.png; sourceTree = "<group>"; };
 		2663948422852C4300D1AE21 /* weather_daxue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather_daxue@2x.png"; sourceTree = "<group>"; };
 		2663948522852C4300D1AE21 /* userPosition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userPosition.png; sourceTree = "<group>"; };
-		2663948622852C4300D1AE21 /* Violation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Violation.png; sourceTree = "<group>"; };
 		2663948722852C4400D1AE21 /* userPosition@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userPosition@2x.png"; sourceTree = "<group>"; };
 		2663948822852C4400D1AE21 /* transforstop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transforstop.png; sourceTree = "<group>"; };
 		2663948922852C4400D1AE21 /* endPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = endPoint.png; sourceTree = "<group>"; };
@@ -1264,7 +1268,6 @@
 		2663949722852C4400D1AE21 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		2663949822852C4400D1AE21 /* endPoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "endPoint@2x.png"; sourceTree = "<group>"; };
 		2663949922852C4400D1AE21 /* decrease@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "decrease@2x.png"; sourceTree = "<group>"; };
-		2663949A22852C4400D1AE21 /* gaspoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gaspoint.png; sourceTree = "<group>"; };
 		2663949B22852C4400D1AE21 /* custtexture_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = custtexture_green.png; sourceTree = "<group>"; };
 		2663949C22852C4400D1AE21 /* naviBackgroundNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = naviBackgroundNormal.png; sourceTree = "<group>"; };
 		2663949D22852C4400D1AE21 /* delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@3x.png"; sourceTree = "<group>"; };
@@ -1381,11 +1384,17 @@
 			isa = PBXGroup;
 			children = (
 				2663930822852C4300D1AE21 /* weather_qing@2x.png */,
+				26355DB92289A14900B174D1 /* cesupoint@3x.png */,
+				26355DB82289A14900B174D1 /* gaspoint_kepai@2x.png */,
+				26355DB52289A14800B174D1 /* gaspoint_shihua@2x.png */,
+				26355DB72289A14900B174D1 /* gaspoint_shiyou@2x.png */,
+				26355DB42289A14800B174D1 /* gaspoint@2x.png */,
+				26355DB62289A14900B174D1 /* servicepoint@2x.png */,
+				26355DBA2289A14A00B174D1 /* Violation@3x.png */,
 				2663930922852C4300D1AE21 /* pause@2x.png */,
 				2663930A22852C4300D1AE21 /* circle@2x.png */,
 				2663930B22852C4300D1AE21 /* arrow_right.png */,
 				2663930C22852C4300D1AE21 /* search@2x.png */,
-				2663930D22852C4300D1AE21 /* gaspoint@2x.png */,
 				2663930E22852C4300D1AE21 /* railway_station@2x.png */,
 				2663930F22852C4300D1AE21 /* refresh@2x.png */,
 				2663931022852C4300D1AE21 /* custtexture_bad.png */,
@@ -1409,13 +1418,9 @@
 				2663932C22852C4300D1AE21 /* truck@2x.png */,
 				2663932D22852C4300D1AE21 /* hema.png */,
 				2663932E22852C4300D1AE21 /* gpsStat2@2x.png */,
-				26355D63228959C700B174D1 /* servicepoint.png */,
-				26355D62228959C600B174D1 /* servicepoint@2x.png */,
-				2663932F22852C4300D1AE21 /* Violation@2x.png */,
 				2663933022852C4300D1AE21 /* localtiles */,
 				2663948422852C4300D1AE21 /* weather_daxue@2x.png */,
 				2663948522852C4300D1AE21 /* userPosition.png */,
-				2663948622852C4300D1AE21 /* Violation.png */,
 				2663948722852C4400D1AE21 /* userPosition@2x.png */,
 				2663948822852C4400D1AE21 /* transforstop.png */,
 				2663948922852C4400D1AE21 /* endPoint.png */,
@@ -1435,7 +1440,6 @@
 				2663949722852C4400D1AE21 /* refresh.png */,
 				2663949822852C4400D1AE21 /* endPoint@2x.png */,
 				2663949922852C4400D1AE21 /* decrease@2x.png */,
-				2663949A22852C4400D1AE21 /* gaspoint.png */,
 				2663949B22852C4400D1AE21 /* custtexture_green.png */,
 				2663949C22852C4400D1AE21 /* naviBackgroundNormal.png */,
 				2663949D22852C4400D1AE21 /* delete@3x.png */,
@@ -1872,6 +1876,7 @@
 				263ACE3B22851F9F00586B88 /* Sources */,
 				263ACE3C22851F9F00586B88 /* Frameworks */,
 				263ACE3D22851F9F00586B88 /* Resources */,
+				0FC030758F3159894D3E2AD9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1908,6 +1913,7 @@
 				263ACE74228524AB00586B88 /* Sources */,
 				263ACE75228524AB00586B88 /* Frameworks */,
 				263ACE76228524AB00586B88 /* Resources */,
+				3443DC76D822C30C00E820EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1995,8 +2001,8 @@
 				266396BF22852C4400D1AE21 /* 13_6749_3107.png in Resources */,
 				2663950722852C4400D1AE21 /* 11_1684_776.png in Resources */,
 				266395E522852C4400D1AE21 /* 13_6741_3107.png in Resources */,
-				266397B722852C4400D1AE21 /* gaspoint.png in Resources */,
 				2663963922852C4400D1AE21 /* 13_6746_3099.png in Resources */,
+				26355DBD2289A14A00B174D1 /* gaspoint_shihua@2x.png in Resources */,
 				2663955322852C4400D1AE21 /* 12_3368_1547.png in Resources */,
 				266394D522852C4400D1AE21 /* circle.png in Resources */,
 				2663972122852C4400D1AE21 /* 13_6740_3095.png in Resources */,
@@ -2056,7 +2062,6 @@
 				266395F322852C4400D1AE21 /* 13_6741_3098.png in Resources */,
 				2663975D22852C4400D1AE21 /* 13_6740_3092.png in Resources */,
 				266395D322852C4400D1AE21 /* 13_6737_3105.png in Resources */,
-				266394AB22852C4400D1AE21 /* gaspoint@2x.png in Resources */,
 				266394FF22852C4400D1AE21 /* 11_1685_775.png in Resources */,
 				2663976122852C4400D1AE21 /* 13_6741_3093.png in Resources */,
 				2663973322852C4400D1AE21 /* 13_6741_3097.png in Resources */,
@@ -2069,7 +2074,6 @@
 				266395E122852C4400D1AE21 /* 13_6739_3092.png in Resources */,
 				2663962F22852C4400D1AE21 /* 13_6742_3092.png in Resources */,
 				2663953122852C4400D1AE21 /* 12_3371_1551.png in Resources */,
-				2663978F22852C4400D1AE21 /* Violation.png in Resources */,
 				2663960F22852C4400D1AE21 /* 13_6746_3104.png in Resources */,
 				266396DF22852C4400D1AE21 /* 13_6749_3102.png in Resources */,
 				266396F522852C4400D1AE21 /* 13_6742_3102.png in Resources */,
@@ -2085,6 +2089,7 @@
 				2663967122852C4400D1AE21 /* 13_6751_3107.png in Resources */,
 				266394E122852C4400D1AE21 /* naviBackgroundHighlighted.png in Resources */,
 				266395A922852C4400D1AE21 /* 13_6740_3103.png in Resources */,
+				26355DC12289A14A00B174D1 /* gaspoint_shiyou@2x.png in Resources */,
 				266394AD22852C4400D1AE21 /* railway_station@2x.png in Resources */,
 				266395B522852C4400D1AE21 /* 13_6736_3100.png in Resources */,
 				2663963F22852C4400D1AE21 /* 13_6746_3106.png in Resources */,
@@ -2178,6 +2183,7 @@
 				266395AD22852C4400D1AE21 /* 13_6740_3101.png in Resources */,
 				263ACE4F22851FA000586B88 /* LaunchScreen.storyboard in Resources */,
 				266396ED22852C4400D1AE21 /* 13_6751_3093.png in Resources */,
+				26355DC32289A14A00B174D1 /* gaspoint_kepai@2x.png in Resources */,
 				263ACE4C22851FA000586B88 /* Assets.xcassets in Resources */,
 				2663958322852C4400D1AE21 /* 12_3374_1546.png in Resources */,
 				2663957722852C4400D1AE21 /* 12_3374_1551.png in Resources */,
@@ -2187,7 +2193,6 @@
 				266396F922852C4400D1AE21 /* 13_6747_3097.png in Resources */,
 				266395EB22852C4400D1AE21 /* 13_6737_3099.png in Resources */,
 				266396D922852C4400D1AE21 /* 13_6750_3092.png in Resources */,
-				26355D64228959C700B174D1 /* servicepoint@2x.png in Resources */,
 				2663950322852C4400D1AE21 /* 11_1684_775.png in Resources */,
 				266397B522852C4400D1AE21 /* decrease@2x.png in Resources */,
 				2663976722852C4400D1AE21 /* 13_6744_3099.png in Resources */,
@@ -2243,7 +2248,6 @@
 				2663958122852C4400D1AE21 /* 12_3375_1553.png in Resources */,
 				266394CF22852C4400D1AE21 /* download@3x.png in Resources */,
 				266395A722852C4400D1AE21 /* 13_6741_3103.png in Resources */,
-				26355D66228959C700B174D1 /* servicepoint.png in Resources */,
 				266395E322852C4400D1AE21 /* 13_6740_3107.png in Resources */,
 				266394BB22852C4400D1AE21 /* animatedTrain_4.png in Resources */,
 				2663954B22852C4400D1AE21 /* 12_3373_1546.png in Resources */,
@@ -2265,9 +2269,11 @@
 				2663964122852C4400D1AE21 /* 13_6747_3106.png in Resources */,
 				2663964922852C4400D1AE21 /* 13_6746_3102.png in Resources */,
 				2663968F22852C4400D1AE21 /* 13_6750_3094.png in Resources */,
+				26355DBF2289A14A00B174D1 /* servicepoint@2x.png in Resources */,
 				2663951922852C4400D1AE21 /* 12_3371_1547.png in Resources */,
 				2663979922852C4400D1AE21 /* man@2x.png in Resources */,
 				266396C122852C4400D1AE21 /* 13_6748_3107.png in Resources */,
+				26355DC52289A14A00B174D1 /* cesupoint@3x.png in Resources */,
 				266395CB22852C4400D1AE21 /* 13_6739_3093.png in Resources */,
 				2663950B22852C4400D1AE21 /* 12_3375_1548.png in Resources */,
 				2663951522852C4400D1AE21 /* 12_3369_1548.png in Resources */,
@@ -2284,7 +2290,6 @@
 				2663963722852C4400D1AE21 /* 13_6747_3099.png in Resources */,
 				266395D922852C4400D1AE21 /* 13_6737_3104.png in Resources */,
 				2663967F22852C4400D1AE21 /* 13_6750_3099.png in Resources */,
-				266394E922852C4400D1AE21 /* Violation@2x.png in Resources */,
 				2663972F22852C4400D1AE21 /* 13_6737_3096.png in Resources */,
 				266397AD22852C4400D1AE21 /* startPoint@2x.png in Resources */,
 				266394CB22852C4400D1AE21 /* weather_baoyu@2x.png in Resources */,
@@ -2342,6 +2347,7 @@
 				2663960B22852C4400D1AE21 /* 13_6748_3092.png in Resources */,
 				2663958D22852C4400D1AE21 /* 13_6741_3102.png in Resources */,
 				2663956922852C4400D1AE21 /* 12_3369_1552.png in Resources */,
+				26355DBB2289A14A00B174D1 /* gaspoint@2x.png in Resources */,
 				266396E122852C4400D1AE21 /* 13_6748_3102.png in Resources */,
 				266396FF22852C4400D1AE21 /* 13_6749_3100.png in Resources */,
 				2663961B22852C4400D1AE21 /* 13_6747_3105.png in Resources */,
@@ -2364,6 +2370,7 @@
 				2663962722852C4400D1AE21 /* 13_6751_3101.png in Resources */,
 				2663971522852C4400D1AE21 /* 13_6741_3094.png in Resources */,
 				266395FF22852C4400D1AE21 /* 13_6745_3093.png in Resources */,
+				26355DC72289A14A00B174D1 /* Violation@3x.png in Resources */,
 				266395AF22852C4400D1AE21 /* 13_6739_3096.png in Resources */,
 				2663958F22852C4400D1AE21 /* 13_6738_3095.png in Resources */,
 				266395DD22852C4400D1AE21 /* 13_6741_3105.png in Resources */,
@@ -2415,8 +2422,8 @@
 				266396C022852C4400D1AE21 /* 13_6749_3107.png in Resources */,
 				2663950822852C4400D1AE21 /* 11_1684_776.png in Resources */,
 				266395E622852C4400D1AE21 /* 13_6741_3107.png in Resources */,
-				266397B822852C4400D1AE21 /* gaspoint.png in Resources */,
 				2663963A22852C4400D1AE21 /* 13_6746_3099.png in Resources */,
+				26355DBE2289A14A00B174D1 /* gaspoint_shihua@2x.png in Resources */,
 				2663955422852C4400D1AE21 /* 12_3368_1547.png in Resources */,
 				266394D622852C4400D1AE21 /* circle.png in Resources */,
 				2663972222852C4400D1AE21 /* 13_6740_3095.png in Resources */,
@@ -2476,7 +2483,6 @@
 				266395F422852C4400D1AE21 /* 13_6741_3098.png in Resources */,
 				2663975E22852C4400D1AE21 /* 13_6740_3092.png in Resources */,
 				266395D422852C4400D1AE21 /* 13_6737_3105.png in Resources */,
-				266394AC22852C4400D1AE21 /* gaspoint@2x.png in Resources */,
 				2663950022852C4400D1AE21 /* 11_1685_775.png in Resources */,
 				2663976222852C4400D1AE21 /* 13_6741_3093.png in Resources */,
 				2663973422852C4400D1AE21 /* 13_6741_3097.png in Resources */,
@@ -2489,7 +2495,6 @@
 				266395E222852C4400D1AE21 /* 13_6739_3092.png in Resources */,
 				2663963022852C4400D1AE21 /* 13_6742_3092.png in Resources */,
 				2663953222852C4400D1AE21 /* 12_3371_1551.png in Resources */,
-				2663979022852C4400D1AE21 /* Violation.png in Resources */,
 				2663961022852C4400D1AE21 /* 13_6746_3104.png in Resources */,
 				266396E022852C4400D1AE21 /* 13_6749_3102.png in Resources */,
 				266396F622852C4400D1AE21 /* 13_6742_3102.png in Resources */,
@@ -2505,6 +2510,7 @@
 				2663967222852C4400D1AE21 /* 13_6751_3107.png in Resources */,
 				266394E222852C4400D1AE21 /* naviBackgroundHighlighted.png in Resources */,
 				266395AA22852C4400D1AE21 /* 13_6740_3103.png in Resources */,
+				26355DC22289A14A00B174D1 /* gaspoint_shiyou@2x.png in Resources */,
 				266394AE22852C4400D1AE21 /* railway_station@2x.png in Resources */,
 				266395B622852C4400D1AE21 /* 13_6736_3100.png in Resources */,
 				2663964022852C4400D1AE21 /* 13_6746_3106.png in Resources */,
@@ -2598,6 +2604,7 @@
 				266395AE22852C4400D1AE21 /* 13_6740_3101.png in Resources */,
 				263ACE85228524AC00586B88 /* LaunchScreen.storyboard in Resources */,
 				266396EE22852C4400D1AE21 /* 13_6751_3093.png in Resources */,
+				26355DC42289A14A00B174D1 /* gaspoint_kepai@2x.png in Resources */,
 				263ACE82228524AC00586B88 /* Assets.xcassets in Resources */,
 				2663958422852C4400D1AE21 /* 12_3374_1546.png in Resources */,
 				2663957822852C4400D1AE21 /* 12_3374_1551.png in Resources */,
@@ -2607,7 +2614,6 @@
 				266396FA22852C4400D1AE21 /* 13_6747_3097.png in Resources */,
 				266395EC22852C4400D1AE21 /* 13_6737_3099.png in Resources */,
 				266396DA22852C4400D1AE21 /* 13_6750_3092.png in Resources */,
-				26355D65228959C700B174D1 /* servicepoint@2x.png in Resources */,
 				2663950422852C4400D1AE21 /* 11_1684_775.png in Resources */,
 				266397B622852C4400D1AE21 /* decrease@2x.png in Resources */,
 				2663976822852C4400D1AE21 /* 13_6744_3099.png in Resources */,
@@ -2663,7 +2669,6 @@
 				2663958222852C4400D1AE21 /* 12_3375_1553.png in Resources */,
 				266394D022852C4400D1AE21 /* download@3x.png in Resources */,
 				266395A822852C4400D1AE21 /* 13_6741_3103.png in Resources */,
-				26355D67228959C700B174D1 /* servicepoint.png in Resources */,
 				266395E422852C4400D1AE21 /* 13_6740_3107.png in Resources */,
 				266394BC22852C4400D1AE21 /* animatedTrain_4.png in Resources */,
 				2663954C22852C4400D1AE21 /* 12_3373_1546.png in Resources */,
@@ -2685,9 +2690,11 @@
 				2663964222852C4400D1AE21 /* 13_6747_3106.png in Resources */,
 				2663964A22852C4400D1AE21 /* 13_6746_3102.png in Resources */,
 				2663969022852C4400D1AE21 /* 13_6750_3094.png in Resources */,
+				26355DC02289A14A00B174D1 /* servicepoint@2x.png in Resources */,
 				2663951A22852C4400D1AE21 /* 12_3371_1547.png in Resources */,
 				2663979A22852C4400D1AE21 /* man@2x.png in Resources */,
 				266396C222852C4400D1AE21 /* 13_6748_3107.png in Resources */,
+				26355DC62289A14A00B174D1 /* cesupoint@3x.png in Resources */,
 				266395CC22852C4400D1AE21 /* 13_6739_3093.png in Resources */,
 				2663950C22852C4400D1AE21 /* 12_3375_1548.png in Resources */,
 				2663951622852C4400D1AE21 /* 12_3369_1548.png in Resources */,
@@ -2704,7 +2711,6 @@
 				2663963822852C4400D1AE21 /* 13_6747_3099.png in Resources */,
 				266395DA22852C4400D1AE21 /* 13_6737_3104.png in Resources */,
 				2663968022852C4400D1AE21 /* 13_6750_3099.png in Resources */,
-				266394EA22852C4400D1AE21 /* Violation@2x.png in Resources */,
 				2663973022852C4400D1AE21 /* 13_6737_3096.png in Resources */,
 				266397AE22852C4400D1AE21 /* startPoint@2x.png in Resources */,
 				266394CC22852C4400D1AE21 /* weather_baoyu@2x.png in Resources */,
@@ -2762,6 +2768,7 @@
 				2663960C22852C4400D1AE21 /* 13_6748_3092.png in Resources */,
 				2663958E22852C4400D1AE21 /* 13_6741_3102.png in Resources */,
 				2663956A22852C4400D1AE21 /* 12_3369_1552.png in Resources */,
+				26355DBC2289A14A00B174D1 /* gaspoint@2x.png in Resources */,
 				266396E222852C4400D1AE21 /* 13_6748_3102.png in Resources */,
 				2663970022852C4400D1AE21 /* 13_6749_3100.png in Resources */,
 				2663961C22852C4400D1AE21 /* 13_6747_3105.png in Resources */,
@@ -2784,6 +2791,7 @@
 				2663962822852C4400D1AE21 /* 13_6751_3101.png in Resources */,
 				2663971622852C4400D1AE21 /* 13_6741_3094.png in Resources */,
 				2663960022852C4400D1AE21 /* 13_6745_3093.png in Resources */,
+				26355DC82289A14A00B174D1 /* Violation@3x.png in Resources */,
 				266395B022852C4400D1AE21 /* 13_6739_3096.png in Resources */,
 				2663959022852C4400D1AE21 /* 13_6738_3095.png in Resources */,
 				266395DE22852C4400D1AE21 /* 13_6741_3105.png in Resources */,
@@ -2807,6 +2815,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0FC030758F3159894D3E2AD9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TrackMapDemo/Pods-TrackMapDemo-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackMapDemo/Pods-TrackMapDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3443DC76D822C30C00E820EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TrackMapDemo-swift/Pods-TrackMapDemo-swift-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackMapDemo-swift/Pods-TrackMapDemo-swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6B2DAE4D34EBD0D9709B1436 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

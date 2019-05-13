@@ -1,4 +1,4 @@
-本工程为基于高德地图iOS SDK进行封装，多弹出框的效果。
+本工程为基于高德地图iOS SDK进行封装，实现货车地图。
 ## 前述 ##
 - [高德官网申请Key](http://lbs.amap.com/dev/#/).
 - 阅读[开发指南](http://lbs.amap.com/api/ios-sdk/summary/).

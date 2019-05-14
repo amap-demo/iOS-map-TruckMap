@@ -13,9 +13,8 @@
 #import "MATrackPointAnnotation.h"
 
 #define kLocationName @"您的位置"
-#define kPointGas @"gas"
-#define kPointService @"service"
-#define kPointViolation @"违章点"
+#define kPointViolation @"摄像头"
+#define kPointCeSu @"违章高发地"
 
 
 @interface ViewController ()<MAMapViewDelegate, AMapSearchDelegate>
@@ -176,8 +175,8 @@
             {
                 MATrackPointAnnotation *annotation = [[MATrackPointAnnotation alloc] init];
                 annotation.coordinate = CLLocationCoordinate2DMake([coordinate[1] floatValue], [coordinate[0] floatValue]);
-                annotation.title   = kPointViolation;
-                annotation.type = 2;
+                annotation.type = (i % 2 == 0) ? 2 : 3;
+                annotation.title = (i % 2 == 0) ? kPointViolation : kPointCeSu;
                 [_violationAnnotations addObject:annotation];
             }
         }
@@ -366,6 +365,8 @@
             poiAnnotationView.image = [UIImage imageNamed:@"servicepoint"];
         }else if (kannotation.type == 2){
             poiAnnotationView.image = [UIImage imageNamed:@"Violation"];
+        }else if (kannotation.type == 3){
+            poiAnnotationView.image = [UIImage imageNamed:@"cesupoint"];
         }
         return poiAnnotationView;
     }

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MATrackPointAnnotation : MAPointAnnotation
-@property (nonatomic, assign) NSInteger type;//0-gas,1-service,2-Violation
+@property (nonatomic, assign) NSInteger type;//0-gas,1-service,2-Violation,3-cesu
 
 @end
 

@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
     let kLocationName: String = "您的位置"
     let kPointGas: String = "加油站"
-    let kPointViolation: String = "违章点"
+    let kPointViolation: String = "摄像头"
+    let kPointCeSu = "违章高发地"
     var isLocated: Bool = false
     var limits:Array<Any> = []
     var search: AMapSearchAPI!
@@ -209,17 +210,19 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
         }
         let locations = locationString.components(separatedBy: "\n")
         var items:Array<MAPointAnnotation> = Array.init()
+        var i = 0
         for oneLocation in locations {
             let coordinate = oneLocation.components(separatedBy: ",")
             if coordinate.count == 2{
                 let annotation = MATrackPointAnnotation.init()
-                annotation.type = 2
                 let lat = coordinate.last! as NSString
                 let lon = coordinate.first! as NSString
                 annotation.coordinate = CLLocationCoordinate2D.init(latitude: lat.doubleValue, longitude: lon.doubleValue)
-                annotation.subtitle = kPointViolation
+                annotation.type = (i % 2 == 0) ? 2 : 3
+                annotation.title = (i % 2 == 0) ? kPointViolation : kPointCeSu
                 items.append(annotation)
             }
+            i += 1
         }
         mapView.addAnnotations(items)
     }
@@ -267,6 +270,8 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate {
                 annotationView!.image = UIImage(named: "servicepoint")
             }else if (kannotation.type == 2){
                 annotationView!.image = UIImage(named: "Violation")
+            }else if(kannotation.type == 3){
+                annotationView!.image = UIImage(named: "cesupoint")
             }
             
             return annotationView!
